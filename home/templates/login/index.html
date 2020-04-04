@@ -1,0 +1,185 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="{% static 'home/login/index.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'home/login/index.css' %}">
+    <title>Example Grocery e-Store</title>
+    <script>
+        $(document).ready(function(){
+            $("#signup-button-disabled").hide();
+            $("#login-button-disabled").hide();
+        });
+        $('#signup-button-active').click(function(){
+            $('#signup-button-active').hide();
+            $("#signup-button-disabled").show();
+        });
+        $('#login-button-active').click(function(){
+            $('#login-button-active').hide();
+            $("#login-button-disabled").show();
+        });
+    </script>
+</head>
+<body>
+    <div class="row">
+        <div class="col-xl-2" style="margin-bottom: 5rem;">
+            <div id="address">
+                Head office: <br>
+                <em>
+                    Building no.,<br>
+                    Road, Block no.,<br>
+                    Area, District,<br>
+                    State. <br>
+                    Pin - 111111
+                </em>
+            </div>
+        </div>
+        <div class="col-xl-8" style="text-align: center;">
+            <div id="header">
+                <h1>
+                    Welcome to Example Grocery e-Store
+                </h1>
+                <div>
+                    <p>
+                        Hi! This is Example Grocery e-Store. This website doesn't have any connection
+                        with any real entity. I just made this website to follow my passion and present
+                        some of my web development skills. I massively used bootstrap in this website to
+                        make it look pretty. Also I have made its backend part in django.
+                    </p>
+                </div>
+            </div>
+            <div id="login" style="padding-left: 35%; padding-right: 35%;">
+                <h1 data-toggle="collapse" data-target="#login-form">
+                    Login
+                </h1>
+                <div id="login-form" class="collapse" style="text-align: left;">
+                    <form>
+                        <div class="form-group">
+                          <label for="g-id">Enter G-ID:</label>
+                          <input type="text" class="form-control" placeholder="Enter your 9-digit G-ID" id="g-id">
+                        </div>
+                        <div class="form-group">
+                          <label for="pwd-login">Password:</label>
+                          <input type="password" class="form-control" placeholder="Enter password" id="pwd-login">
+                        </div>
+                        <div style="float: right; padding-bottom: 10px;">
+                            <a href="#" style="color: azure;">
+                                Forgot Password
+                            </a>
+                        </div>
+                        <button type="button" onclick="loginFormValidation()" id="login-button-active" class="btn btn-success  btn-block">Submit</button>
+                        <button class="btn btn-success btn-block" id="login-button-disabled" disabled>
+                            <span class="spinner-border spinner-border-sm"></span>
+                            Loading...
+                        </button>
+                      </form>
+                </div>
+            </div>
+            <div id="new-customer">
+                <h1>
+                    New to our store?<a href="#" data-toggle="collapse" data-target="#signup-form">
+                        SignUp here
+                    </a>
+                </h1>
+                <div id="signup-form" class="collapse">
+                    <h3 style="margin-top: 1rem; margin-bottom: 1rem; text-decoration: underline;">
+                        Sign Up 
+                    </h3>
+                    <div style="text-align: left;">
+                        <form>
+                            <div class="form-group">
+                                <label for="fname lname"><h5>Name:</h5></label>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name" required style="margin-bottom: 10px;">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name" required style="margin-bottom: 10px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><h5>Email:</h5></label>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Examplemail@example.com" required style="margin-bottom: 10px;">
+                            </div>
+                            <div class="form-group">
+                                <label for="phn"><h5>Mobile no.:</h5></label>
+                                <input type="tel" class="form-control" name="phn" id="phn" placeholder="Enter your 10-digit mobile number" required style="margin-bottom: 10px;">
+                            </div>
+                            <div class="form-group">
+                                <label for="address-2 address-1 address-3"><h5>Address:</h5></label>
+                                <input type="text" class="form-control" name="address-1" id="address-1" placeholder="Building no./Room no." required style="margin-bottom: 10px;">
+                                <input type="text" class="form-control" name="address-2" id="address-2" placeholder="Street name/Area" required style="margin-bottom: 10px;">
+                                <input type="text" class="form-control" name="address-3" id="address-3" placeholder="District" required style="margin-bottom: 10px;">
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd-signup"><h5>Password:</h5></label>
+                                <input type="password" name="pwd-signup" id="pwd-signup" class="form-control" required placeholder="Enter a strong password" required style="margin-bottom: 10px;">
+                            </div>
+                            <div class="form-group">
+                                <label for="cnf-pwd-signup"><h5>Confirm Password:</h5></label>
+                                <input type="password" name="cnf-pwd-signup" id="cnf-pwd-signup" class="form-control" required placeholder="Confirm your password" required style="margin-bottom: 10px;">
+                            </div>
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                  <input class="form-check-input" type="checkbox" required> I have read and agree to <a href="#">terms & conditions</a>.
+                                </label>
+                            </div>
+                        </form>
+                        <button type="button" id="signup-button-active" onclick="validateSignUpForm()" class="btn btn-success btn-block" style="margin-bottom: 50px;">
+                            Resgister
+                        </button>
+                        <button class="btn btn-success btn-block" id="signup-button-disabled" disabled>
+                            <span class="spinner-border spinner-border-sm"></span>
+                            Loading...
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog" style="color: black;">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Congratulations!</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Your account has been successfully created!</p>
+                        <p id="g-id-text"></p>
+                        <p>Please take a note of this G-ID and don't share it with anyone.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-2" style="margin-bottom: 5rem;">
+            <div id="contact">
+                <a href="mailto: examplestore@gmail.com" style="color: azure; text-decoration: none;">
+                    <i class='fa fa-envelope'> Examplestore@dom.com</i><br>
+                </a>
+                <i class='fa fa-phone'> +101 0101010101</i>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

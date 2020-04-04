@@ -1,0 +1,16 @@
+body{
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('/static/home/home/home-body-background.jpg');
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.navbar-nav:last-child{
+    float: right;
+}

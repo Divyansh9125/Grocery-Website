@@ -1,0 +1,55 @@
+body {
+    background-image: url('/static/home/login/login-background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    color: azure;
+    position: relative;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+
+#address {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+#header {
+    transition: transform 1s;
+    margin-top: 15%;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 40px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+#header:hover {
+    transform: scale(1.1);
+}
+
+#login {
+    transition:padding 1s;
+    cursor: pointer;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#login:hover {
+    padding-top: 10px;
+}
+
+#contact {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+#signup-form {
+    padding-left: 15%; 
+    padding-right: 15%;
+}
