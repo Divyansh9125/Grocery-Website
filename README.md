@@ -19,3 +19,9 @@ This is the first screen that welcomes you onboard. It contains login form and s
 
 ### Account creation/Login
 After greeting the customer with this beautiful screen, it gives you two options, first if you are already registered, you can directly login, else you have to signup first and then proceed to login. First if you try to login, it sends your login data in JSON format to the Django's recieving view, where your JSON is unfolded and then that view checks if the user with given G-ID exists or not, if exists, it goes further for password varification, if not, it tells you straight forward.
+
+![invalid login](https://github.com/Divyansh9125/Images/blob/master/Screenshot%20from%202020-04-05%2005-04-49.png)
+
+Then you have to SignUp first. Now, for SignUp, you are expected to fill all the fields and the page also checks the same using Javascript, you should have your emailid format correct, the page also checks for the same using custom form validation.  Now after validating the signup form, it binds all the data into a JSON object and sends to the Djando's view through AJAX and JQuery http request sitting in the backend. The view checks if the customer is unique and registers it. Customer will be notified by a bootstrap4's Modal popout along with her/his G-ID generated at backend.
+
+![signed up](https://github.com/Divyansh9125/Images/blob/master/Screenshot%20from%202020-04-05%2005-23-39.png)
