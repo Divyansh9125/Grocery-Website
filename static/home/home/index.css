@@ -5,6 +5,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url('/static/home/home/home-body-background.jpg');
+    overflow: unset;
 }
 
 body::-webkit-scrollbar {
@@ -13,4 +14,21 @@ body::-webkit-scrollbar {
 
 .navbar-nav:last-child{
     float: right;
+}
+
+.item-container{
+    border-style: solid;
+    border-radius: 5%;
+    border-color: black;
+    margin-top: 20px;
+    border-width: 1px;
+    padding: 4%;
+    width: 100%;
+}
+
+.no-gutter > [class*='col-'] {
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
 }

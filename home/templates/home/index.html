@@ -22,75 +22,398 @@
 <body>
     <header>
         <div style="padding: 15px; background-color: black; width: 100%; margin-top: 3px; color: azure; opacity: .7;">
-            <h1 style="display: inline-block;">
-                Example Grocery e-Store
-            </h1>
-            <h5 style="float: right;">
-                <em>You demand! <br>
-                    We serve!
-                </em>
-            </h5>
+            <div class="row">
+                <div class="col-xl-6">
+                    <h1 style="display: inline-block;">
+                        Example Grocery e-Store
+                    </h1>
+                </div>
+                <div class="col-xl-6">
+                    <h5 style="float: right;">
+                        <em>You demand! <br>
+                            We serve!
+                        </em>
+                    </h5>
+                </div>
+            </div>
         </div>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="width: 100%; list-style: none;">
-            <ul class="navbar-nav" style="padding: 5px; width: 100%; float: left;">
-                <li class="nav-item">
-                    <a class="nav-link" style="color: azure;text-decoration: none;" href="#vegetable">
-                        <div>
-                            <h5>Vegetables</h5>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="color: azure;text-decoration: none;" href="#fruit">
-                        <div>
-                            <h5>Fruits</h5>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="color: azure;text-decoration: none;" href="#juice">
-                        <div>
-                            <h5>Juices</h5>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="color: azure;text-decoration: none;" href="#dairy">
-                        <div>
-                            <h5>Dairy Products</h5>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="color: azure;text-decoration: none;" href="#farm">
-                        <div>
-                            <h5>Farm Products</h5>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="color: azure;text-decoration: none;" href="#packed">
-                        <div>
-                            <h5>Packed Items</h5>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item" style="float: right;">
-                    <a class="nav-link" style="color: azure;text-decoration: none;" href="#myprofile">
-                        <div>
-                            <h5>My Profile</h5>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item" style="float: right;">
-                    <a class="nav-link" style="color: azure;text-decoration: none;" href="#mycart">
-                        <div>
-                            <h5>My Cart</h5>
-                        </div>
-                    </a>
-                </li>
-            </ul>
+        <div style="padding: 5px; background-color: black; width: 100%; color: azure; opacity: .7; text-align: center;">
+            <a href="mailto: examplestore@gmail.com" style="color: azure; text-decoration: none; margin-right: 10px;">
+                <i class='fa fa-envelope'> Examplestore@dom.com</i>
+            </a>
+            <i class='fa fa-phone'> +101 0101010101</i>
+        </div>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top" style="width: 100%;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav" style="padding: 5px;">
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: azure;text-decoration: none;" href="#vegetable">
+                            <div>
+                                <h5>Vegetables |</h5>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: azure;text-decoration: none;" href="#fruit">
+                            <div>
+                                <h5>Fruits |</h5>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: azure;text-decoration: none;" href="#juice">
+                            <div>
+                                <h5>Juices |</h5>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: azure;text-decoration: none;" href="#dairy">
+                            <div>
+                                <h5>Dairy Products |</h5>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: azure;text-decoration: none;" href="#farm">
+                            <div>
+                                <h5>Farm Products |</h5>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: azure;text-decoration: none;" href="#packed">
+                            <div>
+                                <h5>Packed Items</h5>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto" style="padding: 5px;">
+                    <li class="nav-item" style="float: right;">
+                        <a class="nav-link" style="color: azure;text-decoration: none;" href="#myprofile">
+                            <div>
+                                <i class='fa fa-user' style='font-size:24px; color: azure;'> <h5 style="display: inline-block;"> My Profile</h5></i>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item" style="float: right;">
+                        <a class="nav-link" style="color: azure;text-decoration: none;" href="#mycart">
+                            <div>
+                                <i class='fa fa-shopping-cart' style='font-size:24px; color: azure;'> <h5 style="display: inline-block;"> My Cart</h5></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
+    <div class="item-container">
+        <div class="row no-gutter">
+            <div class="col-sm" style="transform: scale(.7);">
+                <div class="card">
+                    <div class="card-header" style="text-align: center;">
+                       <strong>POTATO</strong>
+                       <script>
+                           
+                       </script>
+                       <h5 style="display: inline-block; color: red;">(Out of Stock)</h5>
+                       <h5 style="display: inline-block; color: green;">(In Stock)</h5>
+                    </div>
+                    <div class="card-body">
+                        <img src="{% static 'product/vegetable/potato.jpeg' %}" class="rounded img-thumbnail" alt="potato" style="align-self: center;">
+                    </div> 
+                    <div class="card-footer">
+                        <strong>Price:</strong>  
+                        <p style="display: inline-block;">&#x20b9; {{price}}/kg*</p>
+                        <div class="row" style="text-align: center;">
+                            <div class="col-sm">
+                                <button type="button" class="btn btn-dark">
+                                    <h4>+</h4>
+                                </button>
+                            </div>
+                            <div class="col-sm">
+                                <h3>{{quant}} Kgs</h3>
+                            </div>
+                            <div class="col-sm">
+                                <button type="button" class="btn btn-dark">
+                                    <h4>-</h4>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-success btn-block" style="margin-top: 10px;">
+                            <i class='fa fa-shopping-cart' style='font-size:24px; color: azure;'> My Cart</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm" style="transform: scale(.7);">
+                <div class="card">
+                    <div class="card-header" style="text-align: center;">
+                       <strong>CAPSICUM</strong>
+                       <script>
+                           
+                       </script>
+                       <h5 style="display: inline-block; color: red;">(Out of Stock)</h5>
+                       <h5 style="display: inline-block; color: green;">(In Stock)</h5>
+                    </div>
+                    <div class="card-body">
+                        <img src="{% static 'product/vegetable/capsicum.jpeg' %}" class="rounded img-thumbnail" alt="potato" style="align-self: center;">
+                    </div> 
+                    <div class="card-footer">
+                        <strong>Price:</strong>  
+                        <p style="display: inline-block;">&#x20b9; {{price}}/kg*</p>
+                        <div class="row" style="text-align: center;">
+                            <div class="col-sm">
+                                <button type="button" class="btn btn-dark">
+                                    <h4>+</h4>
+                                </button>
+                            </div>
+                            <div class="col-sm">
+                                <h3>{{quant}} Kgs</h3>
+                            </div>
+                            <div class="col-sm">
+                                <button type="button" class="btn btn-dark">
+                                    <h4>-</h4>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-success btn-block" style="margin-top: 10px;">
+                            <i class='fa fa-shopping-cart' style='font-size:24px; color: azure;'> My Cart</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm" >
+                <div class="card"style="transform: scale(.7);">
+                    <div class="card-header" style="text-align: center;">
+                       <strong>TOMATO</strong>
+                       <script>
+                           
+                       </script>
+                       <h5 style="display: inline-block; color: red;">(Out of Stock)</h5>
+                       <h5 style="display: inline-block; color: green;">(In Stock)</h5>
+                    </div>
+                    <div class="card-body">
+                        <img src="{% static 'product/vegetable/tomato.jpeg' %}" class="rounded img-thumbnail" alt="potato" style="align-self: center;">
+                    </div> 
+                    <div class="card-footer">
+                        <strong>Price:</strong>  
+                        <p style="display: inline-block;">&#x20b9; {{price}}/kg*</p>
+                        <div class="row" style="text-align: center;">
+                            <div class="col-sm">
+                                <button type="button" class="btn btn-dark">
+                                    <h4>+</h4>
+                                </button>
+                            </div>
+                            <div class="col-sm">
+                                <h3>{{quant}} Kgs</h3>
+                            </div>
+                            <div class="col-sm">
+                                <button type="button" class="btn btn-dark">
+                                    <h4>-</h4>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-success btn-block" style="margin-top: 10px;">
+                            <i class='fa fa-shopping-cart' style='font-size:24px; color: azure;'> My Cart</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card" style="transform: scale(.7);">
+                    <div class="card-header" style="text-align: center;">
+                       <strong>Brinjal</strong>
+                       <script>
+                           
+                       </script>
+                       <h5 style="display: inline-block; color: red;">(Out of Stock)</h5>
+                       <h5 style="display: inline-block; color: green;">(In Stock)</h5>
+                    </div>
+                    <div class="card-body">
+                        <img src="{% static 'product/vegetable/brinjal.jpeg' %}" class="rounded img-thumbnail" alt="potato" style="align-self: center;">
+                    </div> 
+                    <div class="card-footer">
+                        <strong>Price:</strong>  
+                        <p style="display: inline-block;">&#x20b9; {{price}}/kg*</p>
+                        <div class="row" style="text-align: center;">
+                            <div class="col-sm">
+                                <button type="button" class="btn btn-dark">
+                                    <h4>+</h4>
+                                </button>
+                            </div>
+                            <div class="col-sm">
+                                <h3>{{quant}} Kgs</h3>
+                            </div>
+                            <div class="col-sm">
+                                <button type="button" class="btn btn-dark">
+                                    <h4>-</h4>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-success btn-block" style="margin-top: 10px;">
+                            <i class='fa fa-shopping-cart' style='font-size:24px; color: azure;'> My Cart</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card" style="transform: scale(.7);">
+                    <div class="card-header" style="text-align: center;">
+                       <strong>PEAS</strong>
+                       <script>
+                           
+                       </script>
+                       <h5 style="display: inline-block; color: red;">(Out of Stock)</h5>
+                       <h5 style="display: inline-block; color: green;">(In Stock)</h5>
+                    </div>
+                    <div class="card-body">
+                        <img src="{% static 'product/vegetable/pea.jpeg' %}" class="rounded img-thumbnail" alt="potato" style="align-self: center;">
+                    </div> 
+                    <div class="card-footer">
+                        <strong>Price:</strong>  
+                        <p style="display: inline-block;">&#x20b9; {{price}}/kg*</p>
+                        <div class="row" style="text-align: center;">
+                            <div class="col-sm">
+                                <button type="button" class="btn btn-dark">
+                                    <h4>+</h4>
+                                </button>
+                            </div>
+                            <div class="col-sm">
+                                <h3>{{quant}} Kgs</h3>
+                            </div>
+                            <div class="col-sm">
+                                <button type="button" class="btn btn-dark">
+                                    <h4>-</h4>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-success btn-block" style="margin-top: 10px;">
+                            <i class='fa fa-shopping-cart' style='font-size:24px; color: azure;'> My Cart</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            
+            <div class="col-xl-3">
+                <div class="card"style="transform: scale(.7);">
+                    <div class="card-header" style="text-align: center;">
+                       <strong>BITTER GOURD</strong>
+                       <script>
+                           
+                       </script>
+                       <h5 style="display: inline-block; color: red;">(Out of Stock)</h5>
+                       <h5 style="display: inline-block; color: green;">(In Stock)</h5>
+                    </div>
+                    <div class="card-body">
+                        <img src="{% static 'product/vegetable/bitter_gourd.jpeg' %}" class="rounded img-thumbnail" alt="potato" style="align-self: center;">
+                    </div> 
+                    <div class="card-footer">
+                        <strong>Price:</strong>  
+                        <p style="display: inline-block;">&#x20b9; {{price}}/kg*</p>
+                        <div class="row" style="text-align: center;">
+                            <div class="col-sm">
+                                <button type="button" class="btn btn-dark">
+                                    <h4>+</h4>
+                                </button>
+                            </div>
+                            <div class="col-sm">
+                                <h3>{{quant}} Kgs</h3>
+                            </div>
+                            <div class="col-sm">
+                                <button type="button" class="btn btn-dark">
+                                    <h4>-</h4>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-success btn-block" style="margin-top: 10px;">
+                            <i class='fa fa-shopping-cart' style='font-size:24px; color: azure;'> My Cart</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3">
+                <div class="card" style="transform: scale(.7);">
+                    <div class="card-header" style="text-align: center;">
+                       <strong>TOMATO</strong>
+                       <script>
+                           
+                       </script>
+                       <h5 style="display: inline-block; color: red;">(Out of Stock)</h5>
+                       <h5 style="display: inline-block; color: green;">(In Stock)</h5>
+                    </div>
+                    <div class="card-body">
+                        <img src="{% static 'product/vegetable/tomato.jpeg' %}" class="rounded img-thumbnail" alt="potato" style="align-self: center;">
+                    </div> 
+                    <div class="card-footer">
+                        <strong>Price:</strong>  
+                        <p style="display: inline-block;">&#x20b9; {{price}}/kg*</p>
+                        <div class="row" style="text-align: center;">
+                            <div class="col-sm">
+                                <button type="button" class="btn btn-dark">
+                                    <h4>+</h4>
+                                </button>
+                            </div>
+                            <div class="col-sm">
+                                <h3>{{quant}} Kgs</h3>
+                            </div>
+                            <div class="col-sm">
+                                <button type="button" class="btn btn-dark">
+                                    <h4>-</h4>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-success btn-block" style="margin-top: 10px;">
+                            <i class='fa fa-shopping-cart' style='font-size:24px; color: azure;'> My Cart</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3">
+                <div class="card" style="transform: scale(.7);">
+                    <div class="card-header" style="text-align: center;">
+                       <strong>Brinjal</strong>
+                       <script>
+                           
+                       </script>
+                       <h5 style="display: inline-block; color: red;">(Out of Stock)</h5>
+                       <h5 style="display: inline-block; color: green;">(In Stock)</h5>
+                    </div>
+                    <div class="card-body">
+                        <img src="{% static 'product/vegetable/brinjal.jpeg' %}" class="rounded img-thumbnail" alt="potato" style="align-self: center;">
+                    </div> 
+                    <div class="card-footer">
+                        <strong>Price:</strong>  
+                        <p style="display: inline-block;">&#x20b9; {{price}}/kg*</p>
+                        <div class="row" style="text-align: center;">
+                            <div class="col-sm">
+                                <button type="button" class="btn btn-dark">
+                                    <h4>+</h4>
+                                </button>
+                            </div>
+                            <div class="col-sm">
+                                <h3>{{quant}} Kgs</h3>
+                            </div>
+                            <div class="col-sm">
+                                <button type="button" class="btn btn-dark">
+                                    <h4>-</h4>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-success btn-block" style="margin-top: 10px;">
+                            <i class='fa fa-shopping-cart' style='font-size:24px; color: azure;'> My Cart</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
