@@ -9,14 +9,48 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer async></script>
 
     <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" defer async></script>
 
     <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" defer async></script>
     <link rel="stylesheet" type="text/css" href="{% static 'home/home/index.css' %}">
+    <script defer>
+        function add(id){
+            _id = Number(id);
+            quant = Number(document.getElementById(id+"-quant").innerHTML);
+
+            if(quant>=1 && quant<10){
+                quant+=1;
+                document.getElementById(String(_id*10+_id)).disbaled = false;
+                document.getElementById(id+"-quant").innerHTML = String(quant);
+                document.getElementById(String(_id*10+_id)).style.color = "white";
+            }else{
+                document.getElementById(id).disbaled = true;
+                document.getElementById(id).style.color = "grey";
+            }
+        }
+
+        function sub(id){
+            _id = Number(id);
+            quant = Number(document.getElementById(String((_id)/11)+"-quant").innerHTML);
+
+            if(quant>1 && quant<=10){
+                quant-=1;
+                document.getElementById(String((_id)/11)+"-quant").innerHTML = String(quant);
+                document.getElementById(String((_id)/11)).disbaled = false;
+                document.getElementById(String((_id)/11)).style.color = "white";
+            }else{
+                document.getElementById(id).disbaled = true;
+                document.getElementById(id).style.color = "grey";
+            }
+        }
+        $(document).ready(function(){
+            
+        })
+    </script>
     <title>Example Grocery e-Store</title>
 </head>
 <body>
@@ -43,376 +77,128 @@
             </a>
             <i class='fa fa-phone'> +101 0101010101</i>
         </div>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top" style="width: 100%;">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav" style="padding: 5px;">
-                    <li class="nav-item">
-                        <a class="nav-link" style="color: azure;text-decoration: none;" href="#vegetable">
-                            <div>
-                                <h5>Vegetables |</h5>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" style="color: azure;text-decoration: none;" href="#fruit">
-                            <div>
-                                <h5>Fruits |</h5>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" style="color: azure;text-decoration: none;" href="#juice">
-                            <div>
-                                <h5>Juices |</h5>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" style="color: azure;text-decoration: none;" href="#dairy">
-                            <div>
-                                <h5>Dairy Products |</h5>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" style="color: azure;text-decoration: none;" href="#farm">
-                            <div>
-                                <h5>Farm Products |</h5>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" style="color: azure;text-decoration: none;" href="#packed">
-                            <div>
-                                <h5>Packed Items</h5>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto" style="padding: 5px;">
-                    <li class="nav-item" style="float: right;">
-                        <a class="nav-link" style="color: azure;text-decoration: none;" href="#myprofile">
-                            <div>
-                                <i class='fa fa-user' style='font-size:24px; color: azure;'> <h5 style="display: inline-block;"> My Profile</h5></i>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item" style="float: right;">
-                        <a class="nav-link" style="color: azure;text-decoration: none;" href="#mycart">
-                            <div>
-                                <i class='fa fa-shopping-cart' style='font-size:24px; color: azure;'> <h5 style="display: inline-block;"> My Cart</h5></i>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
     </header>
-    <div class="item-container">
-        <div class="row no-gutter">
-            <div class="col-sm" style="transform: scale(.7);">
-                <div class="card">
-                    <div class="card-header" style="text-align: center;">
-                       <strong>POTATO</strong>
-                       <script>
-                           
-                       </script>
-                       <h5 style="display: inline-block; color: red;">(Out of Stock)</h5>
-                       <h5 style="display: inline-block; color: green;">(In Stock)</h5>
-                    </div>
-                    <div class="card-body">
-                        <img src="{% static 'product/vegetable/potato.jpeg' %}" class="rounded img-thumbnail" alt="potato" style="align-self: center;">
-                    </div> 
-                    <div class="card-footer">
-                        <strong>Price:</strong>  
-                        <p style="display: inline-block;">&#x20b9; {{price}}/kg*</p>
-                        <div class="row" style="text-align: center;">
-                            <div class="col-sm">
-                                <button type="button" class="btn btn-dark">
-                                    <h4>+</h4>
-                                </button>
-                            </div>
-                            <div class="col-sm">
-                                <h3>{{quant}} Kgs</h3>
-                            </div>
-                            <div class="col-sm">
-                                <button type="button" class="btn btn-dark">
-                                    <h4>-</h4>
-                                </button>
-                            </div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top" style="width: 100%;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav" style="padding: 5px;">
+                <li class="nav-item">
+                    <a class="nav-link" style="color: azure;text-decoration: none;" href="#vegetable">
+                        <div>
+                            <h5>Vegetables |</h5>
                         </div>
-                        <button type="button" class="btn btn-success btn-block" style="margin-top: 10px;">
-                            <i class='fa fa-shopping-cart' style='font-size:24px; color: azure;'> My Cart</i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm" style="transform: scale(.7);">
-                <div class="card">
-                    <div class="card-header" style="text-align: center;">
-                       <strong>CAPSICUM</strong>
-                       <script>
-                           
-                       </script>
-                       <h5 style="display: inline-block; color: red;">(Out of Stock)</h5>
-                       <h5 style="display: inline-block; color: green;">(In Stock)</h5>
-                    </div>
-                    <div class="card-body">
-                        <img src="{% static 'product/vegetable/capsicum.jpeg' %}" class="rounded img-thumbnail" alt="potato" style="align-self: center;">
-                    </div> 
-                    <div class="card-footer">
-                        <strong>Price:</strong>  
-                        <p style="display: inline-block;">&#x20b9; {{price}}/kg*</p>
-                        <div class="row" style="text-align: center;">
-                            <div class="col-sm">
-                                <button type="button" class="btn btn-dark">
-                                    <h4>+</h4>
-                                </button>
-                            </div>
-                            <div class="col-sm">
-                                <h3>{{quant}} Kgs</h3>
-                            </div>
-                            <div class="col-sm">
-                                <button type="button" class="btn btn-dark">
-                                    <h4>-</h4>
-                                </button>
-                            </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: azure;text-decoration: none;" href="#fruit">
+                        <div>
+                            <h5>Fruits |</h5>
                         </div>
-                        <button type="button" class="btn btn-success btn-block" style="margin-top: 10px;">
-                            <i class='fa fa-shopping-cart' style='font-size:24px; color: azure;'> My Cart</i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm" >
-                <div class="card"style="transform: scale(.7);">
-                    <div class="card-header" style="text-align: center;">
-                       <strong>TOMATO</strong>
-                       <script>
-                           
-                       </script>
-                       <h5 style="display: inline-block; color: red;">(Out of Stock)</h5>
-                       <h5 style="display: inline-block; color: green;">(In Stock)</h5>
-                    </div>
-                    <div class="card-body">
-                        <img src="{% static 'product/vegetable/tomato.jpeg' %}" class="rounded img-thumbnail" alt="potato" style="align-self: center;">
-                    </div> 
-                    <div class="card-footer">
-                        <strong>Price:</strong>  
-                        <p style="display: inline-block;">&#x20b9; {{price}}/kg*</p>
-                        <div class="row" style="text-align: center;">
-                            <div class="col-sm">
-                                <button type="button" class="btn btn-dark">
-                                    <h4>+</h4>
-                                </button>
-                            </div>
-                            <div class="col-sm">
-                                <h3>{{quant}} Kgs</h3>
-                            </div>
-                            <div class="col-sm">
-                                <button type="button" class="btn btn-dark">
-                                    <h4>-</h4>
-                                </button>
-                            </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: azure;text-decoration: none;" href="#juice">
+                        <div>
+                            <h5>Juices |</h5>
                         </div>
-                        <button type="button" class="btn btn-success btn-block" style="margin-top: 10px;">
-                            <i class='fa fa-shopping-cart' style='font-size:24px; color: azure;'> My Cart</i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="card" style="transform: scale(.7);">
-                    <div class="card-header" style="text-align: center;">
-                       <strong>Brinjal</strong>
-                       <script>
-                           
-                       </script>
-                       <h5 style="display: inline-block; color: red;">(Out of Stock)</h5>
-                       <h5 style="display: inline-block; color: green;">(In Stock)</h5>
-                    </div>
-                    <div class="card-body">
-                        <img src="{% static 'product/vegetable/brinjal.jpeg' %}" class="rounded img-thumbnail" alt="potato" style="align-self: center;">
-                    </div> 
-                    <div class="card-footer">
-                        <strong>Price:</strong>  
-                        <p style="display: inline-block;">&#x20b9; {{price}}/kg*</p>
-                        <div class="row" style="text-align: center;">
-                            <div class="col-sm">
-                                <button type="button" class="btn btn-dark">
-                                    <h4>+</h4>
-                                </button>
-                            </div>
-                            <div class="col-sm">
-                                <h3>{{quant}} Kgs</h3>
-                            </div>
-                            <div class="col-sm">
-                                <button type="button" class="btn btn-dark">
-                                    <h4>-</h4>
-                                </button>
-                            </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: azure;text-decoration: none;" href="#dairy">
+                        <div>
+                            <h5>Dairy Products |</h5>
                         </div>
-                        <button type="button" class="btn btn-success btn-block" style="margin-top: 10px;">
-                            <i class='fa fa-shopping-cart' style='font-size:24px; color: azure;'> My Cart</i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="card" style="transform: scale(.7);">
-                    <div class="card-header" style="text-align: center;">
-                       <strong>PEAS</strong>
-                       <script>
-                           
-                       </script>
-                       <h5 style="display: inline-block; color: red;">(Out of Stock)</h5>
-                       <h5 style="display: inline-block; color: green;">(In Stock)</h5>
-                    </div>
-                    <div class="card-body">
-                        <img src="{% static 'product/vegetable/pea.jpeg' %}" class="rounded img-thumbnail" alt="potato" style="align-self: center;">
-                    </div> 
-                    <div class="card-footer">
-                        <strong>Price:</strong>  
-                        <p style="display: inline-block;">&#x20b9; {{price}}/kg*</p>
-                        <div class="row" style="text-align: center;">
-                            <div class="col-sm">
-                                <button type="button" class="btn btn-dark">
-                                    <h4>+</h4>
-                                </button>
-                            </div>
-                            <div class="col-sm">
-                                <h3>{{quant}} Kgs</h3>
-                            </div>
-                            <div class="col-sm">
-                                <button type="button" class="btn btn-dark">
-                                    <h4>-</h4>
-                                </button>
-                            </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: azure;text-decoration: none;" href="#farm">
+                        <div>
+                            <h5>Farm Products |</h5>
                         </div>
-                        <button type="button" class="btn btn-success btn-block" style="margin-top: 10px;">
-                            <i class='fa fa-shopping-cart' style='font-size:24px; color: azure;'> My Cart</i>
-                        </button>
-                    </div>
-                </div>
-            </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: azure;text-decoration: none;" href="#packed">
+                        <div>
+                            <h5>Packed Items</h5>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto" style="padding: 5px;">
+                <li class="nav-item" style="float: right;">
+                    <a class="nav-link" style="color: azure;text-decoration: none;" href="#myprofile">
+                        <div>
+                            <i class='fa fa-user' style='font-size:24px; color: azure;'> <h5 style="display: inline-block;"> My Profile</h5></i>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item" style="float: right;">
+                    <a class="nav-link" style="color: azure;text-decoration: none;" href="#mycart">
+                        <div>
+                            <i class='fa fa-shopping-cart' style='font-size:24px; color: azure;'> <h5 style="display: inline-block;"> My Cart</h5></i>
+                        </div>
+                    </a>
+                </li>
+            </ul>
         </div>
-        <div class="row" style="margin-top: 10px;">
-            
-            <div class="col-xl-3">
-                <div class="card"style="transform: scale(.7);">
-                    <div class="card-header" style="text-align: center;">
-                       <strong>BITTER GOURD</strong>
-                       <script>
-                           
-                       </script>
-                       <h5 style="display: inline-block; color: red;">(Out of Stock)</h5>
-                       <h5 style="display: inline-block; color: green;">(In Stock)</h5>
-                    </div>
-                    <div class="card-body">
-                        <img src="{% static 'product/vegetable/bitter_gourd.jpeg' %}" class="rounded img-thumbnail" alt="potato" style="align-self: center;">
-                    </div> 
-                    <div class="card-footer">
-                        <strong>Price:</strong>  
-                        <p style="display: inline-block;">&#x20b9; {{price}}/kg*</p>
-                        <div class="row" style="text-align: center;">
-                            <div class="col-sm">
-                                <button type="button" class="btn btn-dark">
-                                    <h4>+</h4>
-                                </button>
-                            </div>
-                            <div class="col-sm">
-                                <h3>{{quant}} Kgs</h3>
-                            </div>
-                            <div class="col-sm">
-                                <button type="button" class="btn btn-dark">
-                                    <h4>-</h4>
-                                </button>
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-success btn-block" style="margin-top: 10px;">
-                            <i class='fa fa-shopping-cart' style='font-size:24px; color: azure;'> My Cart</i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3">
-                <div class="card" style="transform: scale(.7);">
-                    <div class="card-header" style="text-align: center;">
-                       <strong>TOMATO</strong>
-                       <script>
-                           
-                       </script>
-                       <h5 style="display: inline-block; color: red;">(Out of Stock)</h5>
-                       <h5 style="display: inline-block; color: green;">(In Stock)</h5>
-                    </div>
-                    <div class="card-body">
-                        <img src="{% static 'product/vegetable/tomato.jpeg' %}" class="rounded img-thumbnail" alt="potato" style="align-self: center;">
-                    </div> 
-                    <div class="card-footer">
-                        <strong>Price:</strong>  
-                        <p style="display: inline-block;">&#x20b9; {{price}}/kg*</p>
-                        <div class="row" style="text-align: center;">
-                            <div class="col-sm">
-                                <button type="button" class="btn btn-dark">
-                                    <h4>+</h4>
-                                </button>
-                            </div>
-                            <div class="col-sm">
-                                <h3>{{quant}} Kgs</h3>
-                            </div>
-                            <div class="col-sm">
-                                <button type="button" class="btn btn-dark">
-                                    <h4>-</h4>
-                                </button>
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-success btn-block" style="margin-top: 10px;">
-                            <i class='fa fa-shopping-cart' style='font-size:24px; color: azure;'> My Cart</i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3">
-                <div class="card" style="transform: scale(.7);">
-                    <div class="card-header" style="text-align: center;">
-                       <strong>Brinjal</strong>
-                       <script>
-                           
-                       </script>
-                       <h5 style="display: inline-block; color: red;">(Out of Stock)</h5>
-                       <h5 style="display: inline-block; color: green;">(In Stock)</h5>
-                    </div>
-                    <div class="card-body">
-                        <img src="{% static 'product/vegetable/brinjal.jpeg' %}" class="rounded img-thumbnail" alt="potato" style="align-self: center;">
-                    </div> 
-                    <div class="card-footer">
-                        <strong>Price:</strong>  
-                        <p style="display: inline-block;">&#x20b9; {{price}}/kg*</p>
-                        <div class="row" style="text-align: center;">
-                            <div class="col-sm">
-                                <button type="button" class="btn btn-dark">
-                                    <h4>+</h4>
-                                </button>
-                            </div>
-                            <div class="col-sm">
-                                <h3>{{quant}} Kgs</h3>
-                            </div>
-                            <div class="col-sm">
-                                <button type="button" class="btn btn-dark">
-                                    <h4>-</h4>
-                                </button>
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-success btn-block" style="margin-top: 10px;">
-                            <i class='fa fa-shopping-cart' style='font-size:24px; color: azure;'> My Cart</i>
-                        </button>
-                    </div>
-                </div>
-            </div>
+    </nav>
+    <div class="item-container" id="vegetable">
+        <div class="row no-gutter" id="veg-row-1">
+            <script>
+                const name = [
+                    'POTATO',
+                    'CAPSICUM',
+                    'TOMATO',
+                    'BRINJAL',
+                    'PEAS',
+                    'BITTER GOURD',
+                    'LADY FINGER',
+                    'BOTTLE GOURD',
+                    'ONION',
+                    'GARLIC',
+                ];
+                const images=[
+                    "{% static 'product/vegetable/potato.jpeg' %}",
+                    "{% static 'product/vegetable/capsicum.jpeg' %}",
+                    "{% static 'product/vegetable/tomato.jpeg' %}",
+                    "{% static 'product/vegetable/brinjal.jpeg' %}",
+                    "{% static 'product/vegetable/pea.jpeg' %}",
+                    "{% static 'product/vegetable/bitter_gourd.jpeg' %}",
+                    "{% static 'product/vegetable/lady-finger.jpeg' %}",
+                    "{% static 'product/vegetable/bottle_gourd.jpeg' %}",
+                    "{% static 'product/vegetable/onions.jpeg' %}",
+                    "{% static 'product/vegetable/garlic.jpeg' %}",
+                ];
+                var text1="";
+                for(var i=0; i<name.length/2; i++){
+                    text1+="<div class=\"col-sm\" style=\"transform: scale(.8);\"><div class=\"card\"><div class=\"card-header\" style=\"text-align: center;\"><strong>"+name[i]+"</strong><h5 style=\"display: inline-block; color: red;\" id=\""+name[i]+"-out-stock\">(Out of Stock)</h5>"+
+                    "<h5 style=\"display: inline-block; color: green;\" id=\""+name[i]+"-in-stock\">(In Stock)</h5></div><div class=\"card-body\">"+
+                    "<img src=\""+images[i]+"\" class=\"rounded img-thumbnail\" alt=\"potato\" style=\"align-self: center;\">"
+                    +"</div><div class=\"card-footer\"><strong>Price:</strong><p style=\"display: inline-block;\">&#x20b9; {{price}}/kg*</p><div class=\"row\" style=\"text-align: center;\"><div class=\"col-sm\"><button type=\"button\" class=\"btn btn-dark\" onclick=\"add(this.id)\" id=\""+i+"\">"+
+                    "<h4>+</h4></button></div><div class=\"col-sm\"><h3 id=\""+i+"-quant\">1</h3><h3 style=\"display: inline-block;\">kgs</h3></div><div class=\"col-sm\"><button type=\"button\" class=\"btn btn-dark\" onclick=\"sub(this.id)\" id=\""+(i*10+i)+"\"><h4>-</h4></button></div></div><button type=\"button\" class=\"btn btn-success btn-block\" id=\""+name[i]+"-add-to-cart\" style=\"margin-top: 10px;\">"
+                    +"<i class='fa fa-shopping-cart' style='font-size:24px; color: azure;'> Add to my Cart</i></button></div></div></div>";
+                }
+
+                document.getElementById('veg-row-1').innerHTML=text1;
+            </script>
+        </div>
+        <div class="row no-gutter" id="veg-row-2">
+            <script>
+                var text2="";
+                for(var i=name.length/2; i<name.length; i++){
+                    text2+="<div class=\"col-sm\" style=\"transform: scale(.8);\"><div class=\"card\"><div class=\"card-header\" style=\"text-align: center;\"><strong>"+name[i]+"</strong><h5 style=\"display: inline-block; color: red;\" id=\""+name[i]+"-out-stock\">(Out of Stock)</h5>"+
+                    "<h5 style=\"display: inline-block; color: green;\" id=\""+name[i]+"-in-stock\">(In Stock)</h5></div><div class=\"card-body\">"+
+                    "<img src=\""+images[i]+"\" class=\"rounded img-thumbnail\" alt=\"potato\" style=\"align-self: center;\">"
+                    +"</div><div class=\"card-footer\"><strong>Price:</strong><p style=\"display: inline-block;\">&#x20b9; {{price}}/kg*</p><div class=\"row\" style=\"text-align: center;\"><div class=\"col-sm\"><button type=\"button\" class=\"btn btn-dark\" onclick=\"add(this.id)\" id=\""+i+"\">"+
+                    "<h4>+</h4></button></div><div class=\"col-sm\"><h3 id=\""+i+"-quant\">1</h3><h3 style=\"display: inline-block;\">kgs</h3></div><div class=\"col-sm\"><button type=\"button\" class=\"btn btn-dark\" onclick=\"sub(this.id)\" id=\""+(i*10+i)+"\"><h4>-</h4></button></div></div><button type=\"button\" class=\"btn btn-success btn-block\" id=\""+name[i]+"-add-to-cart\" style=\"margin-top: 10px;\">"
+                    +"<i class='fa fa-shopping-cart' style='font-size:24px; color: azure;'> Add to my Cart</i></button></div></div></div>";
+                }
+                document.getElementById('veg-row-2').innerHTML=text2;
+            </script>
         </div>
     </div>
 </body>

@@ -8,6 +8,7 @@ class Vegetable(models.Model):
     name = models.CharField(max_length=250, unique=True)
     img = models.ImageField(upload_to='vegetable')
     price = models.IntegerField()
+    avail = models.BooleanField(blank=False)
 
 class Fruits(models.Model):
     """
