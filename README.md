@@ -25,3 +25,7 @@ After greeting the customer with this beautiful screen, it gives you two options
 Then you have to SignUp first. Now, for SignUp, you are expected to fill all the fields and the page also checks the same using Javascript, you should have your emailid format correct, the page also checks for the same using custom form validation.  Now after validating the signup form, it binds all the data into a JSON object and sends to the Djando's view through AJAX and JQuery http request sitting in the backend. The view checks if the customer is unique and registers it. Customer will be notified by a bootstrap4's Modal popout along with her/his G-ID generated at backend.
 
 ![signed up](https://github.com/Divyansh9125/Images/blob/master/Screenshot%20from%202020-04-05%2005-23-39.png)
+
+# Home Page
+Home page offers a fully function website for selecting the product you want to buy and has customisable quantites and much more things.
+![home_page](https://github.com/Divyansh9125/Images/blob/master/my-website-1.png)
